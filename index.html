@@ -5,132 +5,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="dark">
     <title>Welcome to my link tree</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Figtree:ital,wght@0,430;0,600;1,430&family=Fraunces:opsz,wght@9..144,560;9..144,680&family=IBM+Plex+Mono:wght@430;560&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Newsreader:opsz,wght@6..72,520;6..72,650&family=Nunito+Sans:ital,wght@0,430;0,650;1,430&family=Outfit:wght@430;560&family=Space+Grotesk:wght@560;650&display=swap" rel="stylesheet">
     <style>
-      :root {
-        color-scheme: dark;
-        --ink: #f4f0e8;
-        --muted: #d4cdc2;
-        --gold: #e7c98a;
-        --line: rgba(231, 201, 138, 0.28);
-        background: #0b0d13;
-        color: var(--ink);
-        font-family: "Segoe UI", Candara, sans-serif;
-      }
-
       * { box-sizing: border-box; }
 
       body {
         margin: 0;
-        background: #0b0d13;
-      }
-
-      main {
-        width: min(44rem, calc(100% - 2rem));
-        margin: 0 auto;
-        padding: 4.5rem 0 5rem;
+        background: #101114;
       }
 
       h1, h2, p { margin: 0; }
 
-      h1, h2 {
-        font-family: Palatino, "Palatino Linotype", Georgia, serif;
-        font-weight: 500;
-        letter-spacing: -0.03em;
+      .wrap {
+        width: min(44rem, calc(100% - 2.4rem));
+        margin: 0 auto;
+      }
+
+      header, article {
+        padding: 3.4rem 0;
       }
 
       h1 {
-        font-size: clamp(1.7rem, 4vw, 2.5rem);
-        line-height: 1.2;
-      }
-
-      .intro {
-        margin-top: 0.9rem;
-        color: var(--muted);
-        line-height: 1.5;
-      }
-
-      a { color: var(--gold); }
-
-      article {
-        margin-top: 2.4rem;
-        padding-top: 1.6rem;
-        border-top: 1px solid var(--line);
+        font-size: clamp(1.8rem, 4.4vw, 2.7rem);
+        font-weight: 520;
+        line-height: 1.18;
+        letter-spacing: -0.03em;
       }
 
       h2 {
-        font-size: clamp(1.6rem, 4vw, 2.1rem);
+        font-size: clamp(1.8rem, 4vw, 2.45rem);
+        font-weight: 650;
+        line-height: 1.15;
       }
 
-      .desc {
-        margin-top: 0.75rem;
-        color: var(--muted);
-        line-height: 1.55;
+      .intro, .desc {
+        margin-top: 0.9rem;
+        line-height: 1.6;
+        font-size: 1.05rem;
       }
 
       .links {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.7rem 1.1rem;
-        margin-top: 1rem;
+        gap: 0.75rem 1.15rem;
+        margin-top: 1.25rem;
+      }
+
+      .links a, .intro a {
+        color: inherit;
+        text-underline-offset: 0.22em;
       }
 
       .links a {
-        color: #f6edd8;
         text-decoration: none;
-        border-bottom: 1px solid rgba(246, 237, 216, 0.4);
+        border-bottom: 1px solid currentColor;
         padding-bottom: 0.08rem;
       }
 
-      .links a:hover { border-bottom-color: var(--gold); }
+      a:hover { opacity: 0.78; }
 
-      .links a:focus-visible {
-        outline: 2px solid #7ef3ff;
+      a:focus-visible {
+        outline: 2px solid currentColor;
         outline-offset: 3px;
+      }
+
+      .theme-home {
+        background: #101114;
+        color: #f4f0e6;
+        font-family: Outfit, "Segoe UI", sans-serif;
+      }
+
+      .theme-home h1 {
+        font-family: Newsreader, Palatino, serif;
+        font-weight: 520;
+      }
+
+      .theme-home .intro { color: #d9d2c4; }
+
+      .theme-home a { color: #e7c98a; }
+
+      .theme-fire {
+        background:
+          radial-gradient(ellipse at 0% 0%, #6a2418 0%, transparent 52%),
+          #140705;
+        color: #f8e7dc;
+        font-family: Figtree, "Segoe UI", sans-serif;
+      }
+
+      .theme-fire h2 {
+        font-family: Fraunces, Palatino, serif;
+        font-weight: 560;
+        color: #ffb199;
+        letter-spacing: -0.03em;
+      }
+
+      .theme-fire .desc { color: #f0d2c4; }
+
+      .theme-fire .links a { color: #ffd3c2; }
+
+      .theme-type {
+        background:
+          radial-gradient(ellipse at 100% 0%, #4b1d78 0%, transparent 46%),
+          #120818;
+        color: #f6ecff;
+        font-family: Outfit, "Segoe UI", sans-serif;
+      }
+
+      .theme-type h2 {
+        font-family: Cinzel, Palatino, serif;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #f0d9ff;
+      }
+
+      .theme-type .desc { color: #e4d4f5; }
+
+      .theme-type .links a { color: #b8fff6; }
+
+      .theme-circuit {
+        background-color: #07140f;
+        background-image:
+          linear-gradient(rgba(62, 240, 176, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(62, 240, 176, 0.07) 1px, transparent 1px);
+        background-size: 26px 26px;
+        color: #dff8ec;
+        font-family: "IBM Plex Mono", Consolas, monospace;
+      }
+
+      .theme-circuit h2 {
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
+        font-weight: 650;
+        letter-spacing: -0.03em;
+        color: #7dffc8;
+      }
+
+      .theme-circuit .desc {
+        color: #c9eadb;
+        font-size: 0.98rem;
+      }
+
+      .theme-circuit .links a { color: #ffe08a; }
+
+      .theme-grades {
+        background: #f4f7f2;
+        color: #1c2b26;
+        color-scheme: light;
+        font-family: "Nunito Sans", "Segoe UI", sans-serif;
+      }
+
+      .theme-grades h2 {
+        font-family: "Libre Baskerville", Palatino, serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #123f38;
+      }
+
+      .theme-grades .desc { color: #314640; }
+
+      .theme-grades .links a { color: #0c5f86; }
+
+      @media (max-width: 640px) {
+        header, article { padding: 2.4rem 0; }
+        .intro, .desc { font-size: 1rem; }
       }
     </style>
   </head>
   <body>
-    <main>
-      <header>
+    <header class="theme-home">
+      <div class="wrap">
         <h1>Welcome to my link tree, these are my current public projects that I am working on or have done in the past</h1>
         <p class="intro"><a href="https://luckycowmoo.github.io/">Try the weird version of this page that I am also working on</a></p>
-      </header>
+      </div>
+    </header>
 
-      <article>
-        <h2>Fire-vs-Fire</h2>
-        <p class="desc">Fire-vs-Fire is my final-year undergraduate paper (which earned a First!). It is a universal, locally run AI-filter browser extension accessible even on low-end consumer laptops, paired with a companion backend server running outside the browser environment for deeper hardware access. Fire-vs-Fire is open-source and designed for users to bring their own models; while the prototype AI-detection models currently sit at 75% accuracy with more on the way, secondary object-detection models (such as automatically blurring all spiders) are already highly effective.</p>
-        <p class="links">
-          <a href="https://github.com/LuckyCowMoo/Fire-vs-Fire" target="_blank" rel="noopener noreferrer">GitHub repository</a>
-          <a href="fire-vs-fire-paper.pdf" target="_blank" rel="noopener noreferrer">Full 25,000-word paper</a>
-          <a href="https://luckycowmoo.github.io/public/assets/fire-vs-fire-demo.mp4" target="_blank" rel="noopener noreferrer">Demonstration video</a>
-        </p>
+    <main>
+      <article class="theme-fire">
+        <div class="wrap">
+          <h2>Fire-vs-Fire</h2>
+          <p class="desc">Fire-vs-Fire is my final-year undergraduate paper (which earned a First!). It is a universal, locally run AI-filter browser extension accessible even on low-end consumer laptops, paired with a companion backend server running outside the browser environment for deeper hardware access. Fire-vs-Fire is open-source and designed for users to bring their own models; while the prototype AI-detection models currently sit at 75% accuracy with more on the way, secondary object-detection models (such as automatically blurring all spiders) are already highly effective.</p>
+          <p class="links">
+            <a href="https://github.com/LuckyCowMoo/Fire-vs-Fire" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+            <a href="fire-vs-fire-paper.pdf" target="_blank" rel="noopener noreferrer">Full 25,000-word paper</a>
+            <a href="https://luckycowmoo.github.io/public/assets/fire-vs-fire-demo.mp4" target="_blank" rel="noopener noreferrer">Demonstration video</a>
+          </p>
+        </div>
       </article>
 
-      <article>
-        <h2>Typemancer</h2>
-        <p class="desc">Typemancer is a game heavily inspired by Slay the Spire and other deck-building roguelikes. Created in response to observing young people's typing proficiency, the goal was to build a genuinely enjoyable game that happens to only accept input through typing—encouraging players to have fun while improving their typing speed passively.</p>
-        <p class="links">
-          <a href="https://luckycowmoo.github.io/typemancer/" target="_blank" rel="noopener noreferrer">Play Typemancer Live</a>
-          <a href="https://github.com/LuckyCowMoo/typemancer" target="_blank" rel="noopener noreferrer">Source</a>
-        </p>
+      <article class="theme-type">
+        <div class="wrap">
+          <h2>Typemancer</h2>
+          <p class="desc">Typemancer is a game heavily inspired by Slay the Spire and other deck-building roguelikes. Created in response to observing young people's typing proficiency, the goal was to build a genuinely enjoyable game that happens to only accept input through typing—encouraging players to have fun while improving their typing speed passively.</p>
+          <p class="links">
+            <a href="https://luckycowmoo.github.io/typemancer/" target="_blank" rel="noopener noreferrer">Play Typemancer Live</a>
+            <a href="https://github.com/LuckyCowMoo/typemancer" target="_blank" rel="noopener noreferrer">Source</a>
+          </p>
+        </div>
       </article>
 
-      <article>
-        <h2>Circuit Maker</h2>
-        <p class="desc">Circuit Maker is a Boolean logic simulation tool. Teachers can use it to export lesson resources and demonstrate how complex systems—like a full calculator with memory and 7-segment displays—can be built entirely from simple logic gates. Students can experiment with gates to build their own circuits, complete challenges to match specific truth tables, and challenge their friends with custom puzzles.</p>
-        <p class="links">
-          <a href="https://luckycowmoo.github.io/circuit-maker/" target="_blank" rel="noopener noreferrer">Open Circuit Maker</a>
-          <a href="https://github.com/LuckyCowMoo/circuit-maker" target="_blank" rel="noopener noreferrer">Source</a>
-        </p>
+      <article class="theme-circuit">
+        <div class="wrap">
+          <h2>Circuit Maker</h2>
+          <p class="desc">Circuit Maker is a Boolean logic simulation tool. Teachers can use it to export lesson resources and demonstrate how complex systems—like a full calculator with memory and 7-segment displays—can be built entirely from simple logic gates. Students can experiment with gates to build their own circuits, complete challenges to match specific truth tables, and challenge their friends with custom puzzles.</p>
+          <p class="links">
+            <a href="https://luckycowmoo.github.io/circuit-maker/" target="_blank" rel="noopener noreferrer">Open Circuit Maker</a>
+            <a href="https://github.com/LuckyCowMoo/circuit-maker" target="_blank" rel="noopener noreferrer">Source</a>
+          </p>
+        </div>
       </article>
 
-      <article>
-        <h2>Class Grades Analyser</h2>
-        <p class="desc">Class Grades Analyser is a teacher resource that takes standard pupil progress reports as input and safely generates intelligent AI insights about individual students and the class as a whole, without ever exposing identifiable information to an AI company or third party. Read more about how this privacy architecture works on the website.</p>
-        <p class="links">
-          <a href="https://luckycowmoo.github.io/class-grades-analyser/" target="_blank" rel="noopener noreferrer">Launch Class Grades Analyser</a>
-          <a href="https://github.com/LuckyCowMoo/class-grades-analyser" target="_blank" rel="noopener noreferrer">Source</a>
-        </p>
+      <article class="theme-grades">
+        <div class="wrap">
+          <h2>Class Grades Analyser</h2>
+          <p class="desc">Class Grades Analyser is a teacher resource that takes standard pupil progress reports as input and safely generates intelligent AI insights about individual students and the class as a whole, without ever exposing identifiable information to an AI company or third party. Read more about how this privacy architecture works on the website.</p>
+          <p class="links">
+            <a href="https://luckycowmoo.github.io/class-grades-analyser/" target="_blank" rel="noopener noreferrer">Launch Class Grades Analyser</a>
+            <a href="https://github.com/LuckyCowMoo/class-grades-analyser" target="_blank" rel="noopener noreferrer">Source</a>
+          </p>
+        </div>
       </article>
     </main>
   </body>
